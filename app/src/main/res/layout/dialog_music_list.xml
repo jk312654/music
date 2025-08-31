@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--播放列表弹窗布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- 标题部分 -->
+    <TextView
+        android:id="@+id/musicCountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放列表（151首）"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:paddingBottom="4dp"/>
+
+    <!-- 播放模式部分 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/playModeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sequential"
+            android:contentDescription="播放顺序图标"
+            android:background="@android:color/transparent"
+            app:tint="#333333"/>
+
+        <TextView
+            android:id="@+id/playModeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="顺序播放"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="4dp" />
+    </LinearLayout>
+
+    <!-- 音乐列表部分 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/musicListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+</LinearLayout>

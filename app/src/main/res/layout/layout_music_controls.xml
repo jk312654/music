@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/musicControlLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:padding="16dp">
+
+    <!-- 歌曲标题 -->
+    <TextView
+        android:id="@+id/songTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="到此为止"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 歌手名 -->
+    <TextView
+        android:id="@+id/artistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songTitle"
+        android:text="徐佳莹"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- 收藏按钮 -->
+    <!--<ImageView
+        android:id="@+id/btnFavorite"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_favorite"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/songTitle"
+        app:tint="@android:color/white" />-->
+
+    <!-- SeekBar 进度条 -->
+    <SeekBar
+        android:id="@+id/songSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/artistName"
+        android:layout_marginTop="12dp"
+        android:progressTint="@android:color/white"
+        android:thumbTint="@android:color/white" />
+
+    <!-- 当前时间 -->
+    <TextView
+        android:id="@+id/currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songSeekBar"
+        android:layout_alignStart="@id/songSeekBar"
+        android:layout_marginTop="6dp"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <!-- 总时长 -->
+    <TextView
+        android:id="@+id/totalTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songSeekBar"
+        android:layout_alignEnd="@id/songSeekBar"
+        android:layout_marginTop="6dp"
+        android:text="03:45"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <!-- 底部控制按钮栏 -->
+    <RelativeLayout
+        android:id="@+id/controlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/currentTime"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="5">
+
+        <!-- PlayMode 按钮 -->
+        <ImageButton
+            android:id="@+id/btnPlayMode"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_sequential" />
+
+        <!-- Previous 按钮 -->
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btnPlayMode"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_previous" />
+
+        <!-- Play/Pause 按钮 -->
+        <ImageButton
+            android:id="@+id/btnPlayPause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btnPrevious"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_play" />
+
+        <!-- Next 按钮 -->
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btnPlayPause"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_next"
+            app:tint="@android:color/white" />
+
+        <!-- Playlist 按钮 -->
+        <ImageButton
+            android:id="@+id/btnPlaylist"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btnNext"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_playlist"
+            app:tint="@android:color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

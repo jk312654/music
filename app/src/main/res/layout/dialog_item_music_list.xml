@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--播放列表弹窗中RecyclerView的item布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- 左侧信息容器 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- 歌曲名称 -->
+        <TextView
+            android:id="@+id/dialog_item_songName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="歌曲名称"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <!-- 分隔符 · -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" · "
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <!-- 歌手名称 -->
+        <TextView
+            android:id="@+id/dialog_item_artistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="歌手"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+    <!-- 删除按钮 -->
+    <ImageButton
+        android:id="@+id/dialog_item_btnDelete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_close"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        app:tint="#666666"
+        android:contentDescription="删除" />
+</LinearLayout>
